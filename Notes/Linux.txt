@@ -1,0 +1,432 @@
+General Notes;
+
+-  while working we no need to give english words permission only, not numbers
+- 
+Working at Production
+240 pods
+70 Workers nodes
+- Note: Linux is casesensitve.
+
+Linux Flavours:
+-------------
+1. Cenots
+2. Ubuntu
+3. Debean
+4. Susi_linux
+5. AWS_Linux
+6. Fidora
+
+etc...
+
+
+Linux Directory Structure
+
+/Root - as admin
+
+/home  - all users information.
+/lib - Systemlibrary files will be there.
+/bin - all commands information will store here, all binary files will store here. for users.
+/sbin - it is system related and admin can use it, sbin can give permissions. for admins
+/etc - security related files, sudoers files, confidential files will there.
+/opt - any external servers can be installed, as a good practice, not an compulsary installation.
+/proc - process related information will be there.
+/tmp - temporary files will be there, it will be moved to there.
+/src: Contains source code, typically for the Linux kernel and other software.
+/var : external user configuration
+
+command:
+------------
+command is nothing but instruction.
+
+1. uname - it is used to disply the system - i.e. output will come linux.
+
+2. man - manual pages, it will tell us how to use other command.
+
+3. whoami - it will tel us the status in the terminal by displaying username.
+
+4. pwd - print working directory.
+
+5. history - it will disploy the previous commands.
+
+6. history -d -3 "it will be deleted the fileno. 3, in history".
+
+7. sudo su - -- Normal User to Root user. (sudo command is very important) # symbol and $ for normal.
+
+8.  exit - root user to normal user.
+
+9. mkdir - make directory.
+
+10. ls - list the directory and files.
+
+11. -v : it will inform us the action done, for ex: mkdir -v kkfunda, it will inform us folder mkfuda created.
+
+12. mkdir "kk-funda" - it will be created in one directory.
+
+13. mkdir -p /kk-duda/gsp/usr - "-p" will tel us the create child folders directory.
+
+14. cd .. : one step back
+
+15. cd : we will go directly to home directory.
+
+16. cd - : recent ga performchesina actions ki shift avvataniki.
+
+17. touch : command is help us create empty file.
+
+18. vi : command is user to create file and editor modifications.
+
+19. cat : disply the inside the file.
+
+20. wq : save the data and quite.
+
+21. ls -l : it long listing.
+
+22. ls -la : it will list all the files, hidden files, hidden extensions
+
+23. ls -lh : human readable format.
+
+24. ls -lrth : it will disply the files with human reable format and time based.(long listing, reverorder, time - timebased, h-human 
+
+25. inode : i node is a data structure, i node files and dirctory information.
+
+26. ls -li : disply the inode commands.
+
+27. rmdir : remove directory only empty directory
+
+28. rm -rf "directory name" : remove with files in directory.
+
+Note : command not found will disply if command not available in Bin Dir. All the commands we are using are saved in BIN Folder.
+
+Note : if we not found any commnds an system, we need to install by sudo previlage.
+
+29. cat -n test.java : it will disply the line number.
+
+30. >test.java : remove the all data in file, but file will not be deleted.
+
+31. cat * : will disply the data in all files in that directory.
+
+32. tail : it will display the last 10 lines by default.
+
+33. tail -n 2: it will disply the only last 2 files.
+
+34. head : head is also same like tail.
+
+35. tail -n 3 toolts.txt -q all_error.txt : it will not disply brackets in two files.
+
+36. head -20 toolts.txt | tail -10 " it will disply the files between 10 and 20.
+
+37. grep - for searching the directory.
+
+38. grep -i : case insestive.
+
+39. grep -iE "brooklyn|test.java" all_error.txt
+
+40. -iE - Ignore and eighter.
+
+41. grep -inE "brooklyn|test.java" all_error.txt - it will disply the line number 
+
+42. grep -ic - total number of lines count.
+
+43. grep -il - the world matching the file will be displayed.
+
+44. gre -io "brooklen" only matching word will be deployed.
+
+45. grep -iv "verbose mode" - it will disply the line what we selected.
+
+46. grep -iA3 - it will be displayed 3 lines after the error displayed in log.
+
+47. grep -iB3 - it will be dsiplayed before 3 lines of line.
+
+48. grep -iC3 - before 3 lines and after 3 lines.
+
+49. wc <file name> - 13 303 1706 - 
+
+50. permission	
+	read -4
+	write - 2
+	execute - 1
+	
+	file base permission - 0666 - 0002 = 664
+	base permission for dir - 0777 -0022 = 755
+	file is alwasy smaller than folder.
+	
+	
+50. umask - default value is - 0022
+
+51. chmod -R 444 - for folders - -R should be recursive mode only.
+
+52. Chown - change owner - it always open with Root Userm CHOWN is only admin can excute.
+
+53. sudo chown *.java - all the files.
+
+54. Chgrp - change the group (by default group name is whell) by default grop /
+
+for examples, searching (cp *.java ansible / )
+
+ls -l ansible/
+
+in VIM editor - set nu - will give total numbers
+
+
+55. diff first file and send file
+
+56. CP is used to \ is like copy from here to another
+
+57. rm -f ansible / removing the fie.
+
+58. MV is cut and paste., renaming is also we used the command MV.
+
+Note : ASCI - americal stanard code information.
+
+59. file - command is used to what type of data inside that.
+
+60. ln - link.
+
+
+70. Soft link & Hard Link:
+		Hard Link:
+		----------
+		- ln gsp.txt gsp1.txt (for linking the hard lin)
+		- Note: The i node number is same in the hard link.
+		- if original file deleted still we can access normal file.
+		- Hard link can be created to files only, not for directories.
+		
+		Soft link:
+		-----------
+		- ln -s gsp.txt gsp1.txt (for linking the soft link).
+		- I node number is different.
+		- data cannot be accesse, once deleted the original file.
+		- soft link will be created for files and directories.
+		
+71. ls -li - to know inode number.
+
+72. echo : echo is the command it will help us the display the command.
+
+73. TAC : tac is reverse order for cat. 
+
+74. TR : translate command - lower case words needs to be converted to upper case. {tr [a-z][A-Z] vice-versa.
+
+75. VI and VIM :
+
+76. File - is command to know the file type.
+
+77. Tree - Command to display the all the files in folders.
+
+17.06.2024 :
+--------------
+78. find vs ls vs tree:
+	- ls will disply only current directory.
+	- tree will display the all folders and files in structured way, but uanble to trace eaisly.
+	- find will find the document where ever it is.
+
+78. find - current working directory (find . -type f -name gsp.txt)
+	find . type f "*.doc"00
+
+79. sed: - (Stream editor): 's/current/change' it will use mostly in Linux.
+							's/crrent/change/p' global.
+	===
+		
+80. who: - how many users are connted, it will show 
+	===
+
+81. W: - command provides more detailed information about who is currently logged into the system
+
+82. uptime: - 	command provides a quick summary of how long the system has been running, the number 	of 	users currently logged in, and the system load averages for the past 1, 5, and 15 minutes. The syntax is simply:
+
+	
+83.	users:
+	=====
+	  - it will display the how many users are active now.
+	  
+84. whereis :
+	======
+	- The whereis command is used in Unix-like operating systems to locate the binary, source, and 		manual page files for a command. This command is useful for quickly finding the paths to these files.
+	  
+
+85.  date: date command only used in SUDO, it will tel us current time and date. date command is most important to track the script.
+
+
+
+86. timedatectl : to know all the time zones.
+
+87. TOP : command will display the total memory usage.
+
+88. kill : kill command will kill the all the commands.
+			kill -l all the options will display
+			kill -9 41832 - process will killed.
+			
+
+90. ps: is the one who display the process in our system 
+			ps -a : current process
+			ps -e : all the process.
+			ps -f : all the process that are running.
+
+91. df : (disk free)
+		- disk usage.
+		- df -h - disk usage, human readble format.
+		
+92. du: Shows the disk usage of the specified directory. If no directory is specified, it defaults to the current directory.
+
+Class-07
+93. hostname: 
+		- everyserver has different hostname with private address.
+		hostname -i : only ip address.
+		
+94. ifconfig :
+	- by default it will dispaly the ip address details.
+	
+95. nettools:
+		- it will install the ipconfig, nettools are to be installed.
+
+96. whatis :
+		- to know the any command purpose.
+		
+97. service:
+		- it will useful the run service of applications.
+		- it iwll also, userful to status, stop, start the service.
+		
+98. last:
+		- will display the users logedin.
+		- last -F ec2-user
+
+		
+
+99. hostname: it will tell us host dns name.
+	hostname -i : will tell us private ip
+	
+100. if config : 
+	if config directly not available, we need to install seperately bynettools.
+
+
+
+
+
+101. last : will tell us all the users details
+	----
+	- last -R centos
+		it will tell us all the information about user.
+		
+102. ps :
+	- everytime we done in linux, there is one process will continue.
+	ps -ef : all the prorcss
+	ps -a : process will come
+	kill -l (list of tsks to be done during the kill)
+	
+103. TOP :
+	for the system stats checking.
+	- uptime command is also same like, but top will give full detail.
+
+104. ls home:
+	-	ls /home | wc -l = to listout all the users
+	-	useradd : to add new user
+	-	sudo cat /etc/shadow : all the shadows of info.
+
+108. zip: we can zip directories or individual files also can be zipped.
+			- zip -r devops.zip devops
+			- uzip - r devops.zip
+
+109. tar: command is used to compress the files.
+			- tar -cvf devops.tar devops
+			- tar -xvf devops.tar devops
+
+110. useradd:
+		- creating new users.
+		- users - total users list on the server.
+		- this command will work only Root User.
+		- cat /etc/shadow will dispaly the all the user and admins.
+		- su : switch user.
+		
+111. passwd:
+		- to change the password
+		- it will work with root user.
+		- the password will be saved /etc/shadow
+		
+		encription: the process of converting plaintest into cipher text is called as enycription.
+		decription: the process cipher text into the plain text.
+		
+112. chage:
+		- we can set the time limits.
+
+
+113. groups:
+		- group information will be stored in /etc/group
+		- sudo usermod -g dev ramu (add to grou)
+		- sudo lid -g dev (to know the dev group list)
+		- sudo usermod -aG dev ramu (Ramu is appending)
+
+114. id:
+		- to know the persion how many groups part of it.
+		
+115. sudoers: v.v. imp file.
+		- sudo cat /etc/sudoers
+		- sudo cat /etc/sudoers
+		- visudo also will be opened sudoers file.
+		- sudo userdel -r sai
+		
+116. ssh 
+		- secure shell.
+		- 
+117. sshd.config :
+		- /etc/ssh/ssd_Config:
+		- by default password authentication by default "YES", need to modify.
+		
+118. more :
+		more <filename>
+			- it will dispaly the page by page
+			- cat -n dailyclss.txt | more
+			- line by line - Enter
+			- page by page - space
+			- back page - b
+			- front page - f
+			
+	 less <file name>
+			- it will display the page by line
+			- control + d off window
+			- control + u backword off window
+			
+119. awk:
+			- awk is display the out put of the file.
+			- awk '{print}' table.txt
+			- awk '/sales/ {print}' tables.txt
+			- awk '{print $0}' table.txt
+			- awk '{print $1, $4}'
+			- awk '{print $NF} - to display last command
+			
+220. wget:
+		- used to download the files in linux.
+		
+221. cronetab:
+			- to automate the tasks by running the scripts.
+			- normally, DB backup, docker history clean unsued images, etc...
+			- daily routine tasks can run automatically.
+			- crontab having 5 starts, it can also be in 5 stars
+			- sudo yum install cronie -y
+			- crontab -l : list of crontabs.
+			- we need to create cron.allow file in /etc/cron.allow then we have to give access to ec2-user (as a user) to allow the cron tab.
+	
+	
+		
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
